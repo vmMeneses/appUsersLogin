@@ -1,15 +1,12 @@
-package com.meneses.apptestusers.ui;
+package com.meneses.apptestusers.ui.splash;
 
 import android.content.Intent;
 import android.os.Bundle;
 
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
 import com.meneses.apptestusers.R;
+import com.meneses.apptestusers.ui.login.LoginActivity;
 
 public class SplashActivity extends AppCompatActivity {
 

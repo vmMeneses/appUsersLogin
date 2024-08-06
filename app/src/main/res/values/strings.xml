@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">appTestUsers</string>
+    <string name="open_nav">appTestUsers</string>
+    <string name="close_nav">appTestUsers</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_settings">Settings</string>
+    <string name="title_profile">Profile</string>
+    <string name="title_logout">Log Out</string>
 </resources>

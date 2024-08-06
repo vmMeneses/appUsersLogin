@@ -1,7 +1,9 @@
-package com.meneses.apptestusers.ui;
+package com.meneses.apptestusers.ui.login;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -32,17 +34,42 @@ public class LoginActivity extends AppCompatActivity {
     private void initUI() {
         Button buttonLogin = findViewById(R.id.ButtonLogin);
         EditText editTextIdUSer = findViewById(R.id.EditTextIdUser);
+        buttonLogin.setEnabled(false);
+
+        editTextIdUSer.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+                String idUser = editTextIdUSer.getText().toString().trim();
+                if(idUser.isEmpty()){
+                    buttonLogin.setEnabled(false);
+                }else{
+                    buttonLogin.setEnabled(true);
+                }
+            }
+        });
 
         buttonLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 String idUser = editTextIdUSer.getText().toString().trim();
-                if(idUser.isEmpty()){
+                /*if(idUser.isEmpty()){
+                    buttonLogin.setEnabled(false);
                     Toast.makeText(LoginActivity.this, "Ingrese un ID válido", Toast.LENGTH_SHORT).show();
-                }else{
-                    //pruebadePeticion(idUser);
-                    launchActivityLstSimple();
-                }
+                }else{*/
+                    pruebadePeticion(idUser);
+                    buttonLogin.setEnabled(true);
+                    //launchActivityLstSimple();
+                //}
 
             }
         });
